@@ -3,5 +3,6 @@
 		<div style="text-align: center"><input name="submit" type="submit" value="{LANG.save}" /></div>
 		<div style="text-align: center"><input name="tagsubmit" type="submit" value="Tạo bảng tag" /></div>
 		<div style="text-align: center"><input name="commentsubmit" type="submit" value="Tạo bảng comment" /></div>
+		<div style="text-align: center"><input name="imgsubmit" type="submit" value="Chuyển ảnh" /></div>
 	</form>
 <!-- END: main -->
