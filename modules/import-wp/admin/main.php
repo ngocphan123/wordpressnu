@@ -250,11 +250,11 @@ function string_to_filename($word)
 //submit ảnh
 if ($nv_Request->isset_request('imgsubmit', 'post')) {
     /*- Kiểm tra ảnh minh họa và ảnh trong nội dung, nếu tồn tại thì copy ảnh qua uploads của nukeviet
-     - Copy qua rồi thì đổi tên ảnh (vì tên file trong nukeviet nó có quy tắc chứ ko đặt lung tung được, sẽ lỗi khi quản lý file)
-     - đổi tên xong cập nhật lại tên ở CSDL
-     - tạo ảnh thumb từ ảnh vừa copy sang
-     *
-     *
+- Copy qua rồi thì đổi tên ảnh (vì tên file trong nukeviet nó có quy tắc chứ ko đặt lung tung được, sẽ lỗi khi quản lý file)
+- đổi tên xong cập nhật lại tên ở CSDL
+- tạo ảnh thumb từ ảnh vừa copy sang
+     * 
+     * 
      * */
     
     $result = $db->query('SELECT * FROM nv4_vi_news_rows');
@@ -412,7 +412,7 @@ function nv_create_table_news($lang, $module_data, $newcatid)
 	 KEY instant_active (instant_active),
 	 KEY instant_creatauto (instant_creatauto)
 	) ENGINE=MyISAM");
-    
+
 }
 
 function nv_create_table_cat($term_id, $weight, $viewcat, $module_data, $name, $slug, $admin_id, $parent = 0, $description = '')
@@ -451,7 +451,7 @@ if ($nv_Request->isset_request('commentsubmit', 'post')) {
     $_query = $db->query('SELECT * FROM `wp_comments` WHERE`comment_post_id` IN (SELECT id FROM nv4_vi_news_rows )');
     while ($row = $_query->fetch()) {
         $db->query('INSERT INTO ' . NV_PREFIXLANG . '_comment(`cid`, `module`, `area`, `id`, `pid`, `content`, `post_time`, `userid`, `post_name`, `post_email`, `post_ip`, `status`, `likes`, `dislikes`) VALUES (' . $row['comment_id'] . ', ' . $db->quote($module_data) . ', 8, ' . $row['comment_post_id'] . ', 0, ' . $db->quote($row['comment_content']) . ', ' . $db->quote($row['comment_date']) . ', ' . $row['user_id'] . ', ' . $db->quote($row['comment_author']) . ', ' . $db->quote($row['comment_author_email']) . ', ' . $db->quote($row['comment_author_ip']) . ', 1,  0, 0)');
-        
+    
     }
 }
 
@@ -477,7 +477,7 @@ if ($nv_Request->isset_request('tagsubmit', 'post')) {
             }
         }
     }
-    
+
 }
 if ($nv_Request->isset_request('submit', 'post')) {
     // Set data for module News;
@@ -666,7 +666,7 @@ if ($nv_Request->isset_request('submit', 'post')) {
                 echo '<b>ERROR: ' . $rowcontent['post_title'] . '</b><br>';
             }
         }
-        
+    
     }
     die($error);
 } else {
